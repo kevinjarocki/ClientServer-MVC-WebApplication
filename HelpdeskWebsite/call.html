@@ -1,0 +1,122 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Trainer Helpdesk v2.0</title>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link href="Content/employee.css" rel="stylesheet" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="background-color: aqua">
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <a class="navbar-brand" href="#">Case#2</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarContent">
+        <ul class="navbar-nav mr-auto">
+            <li class="nav-item active text-dark font-weight-bold">
+                <a class="nav-link" href="/home.html">Home<span class="sr-only">(current)</span></a>
+            </li>
+            <li class="nav-item active text-dark font-weight-bold">
+                <a class="nav-link" href="/employee.html">Employee</a>
+            </li>
+            <li class="nav-item active text-dark font-weight-bold">
+                <a class="nav-link text-white-50 bg-dark" href="/call.html" data-toggle="modal">Calls</a>
+            </li>
+            <li class="nav-item active text-dark font-weight-bold">
+                <a class="nav-link" href="/reports.html">Reports</a>
+            </li>
+        </ul>
+        <span class="navbar-text text-dark font-weight-bold">V 2.0</span>
+    </div>
+    <div class="form-group mt-2 mr-2">
+        <input type="text" class="form-control" id="srch" placeholder="Search"/>
+    </div>
+</nav>
+<div class="justify-content-center align-items-center row mt-5 ml-1" style="background-color: coral">
+    <img src="img/pokedex.gif" class="img-fluid" alt="Responsive image" style="width: 18%; height: 18%" />
+    <div class="col-12 text-center p-3" style="background-color: aquamarine">
+        <h2>Current Calls<br />V2.0</h2>
+    </div>
+    <div class="list-group col-10" style="background-color: aquamarine; text-decoration-color: darkblue" id="callList">
+    </div>
+</div>
+<form id="CallModalForm" name="CallModalForm" method="post" action="">
+    <div class="modal fade text-center mr-3" data-backdrop="static" id="theModal">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header d-block">
+                    <button type="button" class="close float-right" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                    <div class="modal-title text-center" id="modaltitle"></div>
+                </div>
+                <div class="modal-body" style="background-color: coral">
+                    <div class="mx-4 my-4">
+                        <img src="img/pokeball.png" class="img-fluid" alt="Responsive image" style="width: 10%; height: 10%" />
+                        <div class="card">
+                          
+                            <div class="card-header text-center" style="text-decoration-color: darkblue; font-family: sans-serif">
+                                Add/Change Call Information V2.0
+                            </div>
+                           
+                            <div class="card-body" style="background-color: aquamarine">
+                                <div class="row" style="background-color: aquamarine">
+                                    <div class="text-right col-5 text-left">Problem:</div>
+                                    <div class="col-7 text-left"><select id="ddlProblem" name="ddlProblem" class="form-control"></select></div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-right col-5">Employee:</div>
+                                    <div class="col-7 text-left"><select id="ddlEmployee" name="ddlEmployee" class="form-control"></select></div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-right col-5">Technician:</div>
+                                    <div class="col-7 text-left"><select id="ddlTech" name="ddlTech" class="form-control"></select></div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-right col-5">Date Opened:</div>
+                                    <div class="col-7 text-left">
+
+                                        <label id="labelDateOpened"></label>
+                                        <input type="hidden" id="dateOpened"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-right col-5">Date Closed:</div>
+                                    <div class="col-7 text-left">
+                                        <label id="labelDateClosed"></label>
+                                        <input type="hidden" id="dateClosed"/>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-right col-5">Close Call:</div>
+                                    <div class="col-7 text-left"><input type="checkbox" name="CheckBoxDateClosed" id="CheckBoxDateClosed"/></div>
+                                </div>
+                                <div class="row">
+                                    <div class="text-right col-5">Notes:</div>
+                                    <div class="col-7 text-left"><textarea rows="4" cols="50" placeholder="Enter Notes.." id="TextAreaNotes" name="TextAreaNotes"></textarea></div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-footer text-center" style="background-color: black">
+                      <input type="button" class="btn btn-secondary" value="Update" id="actionbutton" style="color: aquamarine; background-color: white"/>
+                    <input type="button" class="btn btn-secondary" data-toggle="confirmation" id="deletebutton" data-placement="right" value="delete" style="background-color: white; color: red" />
+                        <div id="modalstatus" class="text-left mt-3 mb-2" style="font-family: fantasy; color: whitesmoke; text-decoration: beige"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+<script src="Scripts/jquery-3.3.1.min.js"></script>
+<script src="Scripts/jquery.validate.min.js"></script>
+<script src="Scripts/call.js"></script>
+<script src="Scripts/popper.min.js"></script>
+<script src="Scripts/bootstrap.bundle.min.js"></script>
+<script src="Scripts/bootstrap-confirmation.min.js"></script>   
+</body>
+</html>

@@ -1,0 +1,64 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Hello PDF</title>
+    <meta charset="utf-8" />
+    <link href="Content/bootstrap.min.css" rel="stylesheet" />
+    <link rel="icon" href="data:;base64,iVBORw0KGgo">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+</head>
+<body style="background-color: aqua">
+    <nav class="navbar navbar-expand-md navbar-light bg-light" style="background-color: coral">
+        <a class="navbar-brand" href="#">Case#2</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarContent">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item active text-dark font-weight-bold">
+                    <a class="nav-link" href="/home.html">Home<span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active font-weight-bold">
+                    <a class="nav-link" href="/employee.html">Employee</a>
+                </li>
+                <li class="nav-item active text-dark font-weight-bold">
+                    <a class="nav-link" href="/call.html">Calls</a>
+                </li>
+                <li class="nav-item active text-dark font-weight-bold">
+                    <a class="nav-link text-white-50 bg-dark" href="/reports.html">Reports</a>
+                </li>
+            </ul>
+            <span class="navbar-text text-dark font-weight-bold">V 2.0</span>
+        </div>
+    </nav>
+    <div class="mx-4 my-4">
+        <div class="card">
+
+            <div class="card-header text-center font-weight-bold" style="background-color: aquamarine">
+                <img src="img/report.jpg" class="img-fluid" alt="Responsive image" width="200px" height="200px" style="display: block; margin-left: auto; margin-right: auto; max-width: 25%" />
+                <h2 style="font-weight: bold">Reports</h2>
+                <h3 style="font-size: smaller;">V2.0</h3>
+            </div>
+            <div class="card-body" style="background-color: coral">
+
+                <div class="list-group col-10" style="background-color: aquamarine; text-decoration-color: darkblue; margin-left: auto; margin-right: auto;" id="reportList">
+
+                    <!----<div class="list-group-item text-white bg-secondary row d-flex text-center" id="status">Reports</div> -->
+                    <button class="list-group-item row d-flex" id="employeeReportBtn" style="background-color: yellow;">Employee Report</button>
+                    <button class="list-group-item row d-flex" id="callReportBtn" style="background-color: yellow">Call Report</button>
+                </div>
+                <div id="lblstatus" class="text-left mt-3 mb-2"></div>
+                </div>
+            </div>
+        </div>
+
+
+
+
+        <script src="Scripts/jquery-3.3.1.min.js"></script>
+        <script src="Scripts/popper.min.js"></script>
+        <script src="Scripts/bootstrap.bundle.min.js"></script>
+        <script src="Scripts/bootstrap-confirmation.min.js"></script>
+        <script src="Scripts/reports.js"></script>
+    </body>
+    </html>
